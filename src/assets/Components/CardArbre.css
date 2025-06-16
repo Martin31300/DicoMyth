@@ -1,0 +1,42 @@
+.DivCardArbre {
+    width: 160px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    background-color: var(--light-color);
+    overflow: hidden;
+    text-align: center;
+    border: 2px solid #ddd;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+}
+
+.DivCardArbre:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.ImgCardArbre {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.ImgCardArbre:hover {
+    transform: scale(1.1);
+}
+
+.TitreCardArbre {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0.5rem 0;
+    color: var(--dark-color);
+    padding: 0 0.5rem;
+}
+
+.DescriptionArbre {
+    font-size: 12px;
+    margin: 0.2rem 0;
+    padding: 0 0.5rem;
+}

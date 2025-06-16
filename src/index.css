@@ -1,0 +1,26 @@
+:root {
+
+    /* couleur */
+    --light-color: #f5f1e6;
+    --light-color-rgb: 245, 241, 230;
+    --light-grey-color: #D8D2C4;
+    --jaune-color: #C2A95F;
+    --red-color: #A3432A;
+    --dark-color: #2E2E2E;
+    --dark-color-rgb: 46, 46, 46;
+    --grey-color: #6C6C6C;
+
+    /* typographies */
+    --titre: 'Space Grotesk', sans-serif;
+    --sous-titre: 'Space Grotesk', sans-serif;
+    --texte: 'Inter', sans-serif;
+    --citation: 'DM Serif Display', serif;
+
+    --main-margin-left: 20%;
+    --main-margin-right: 20%;
+    --btn-hover-color: white;
+    --btn-scale: 1.1;
+    --transition-speed: 0.5s;
+    --shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    --border: 2px solid black;
+}

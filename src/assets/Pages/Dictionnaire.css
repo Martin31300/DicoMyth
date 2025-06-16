@@ -1,0 +1,51 @@
+.mainDico {
+    margin-left: 12.5%;
+    margin-right: 12.5%;
+    margin-top: 84px;
+}
+
+.heroDico {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.h1Dictionnaire {
+    text-align: center;
+    font-size: 60px;
+    margin: 100px auto 20px auto;
+}
+
+.SearchBar {
+    background-color: var(--light-color);
+    padding: 10px;
+    border-radius: 10px;
+    margin: auto;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.SearchBar input {
+    width: 100%;
+
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.tabHeroes {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.lettreTitre {
+    font-size: 40px;
+    margin-top: 60px;
+    color: var(--light-color);
+    background-color: black;
+    padding-top: 8px;
+    padding-left: 20px;
+    padding-bottom: 8px;
+}
