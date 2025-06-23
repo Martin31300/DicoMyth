@@ -5,9 +5,30 @@ import HeroCard from "../Components/HeroCard";
 import SearchBar from "../Components/SearchBar";
 import { Link } from "react-router";
 
+type HeroTarget =
+  | string
+  | {
+      target: string;
+      sourceHandle: string;
+      targetHandle: string;
+    };
+
+    type Hero = {
+        id: string;
+        name: string;
+        image: string;
+        imageProfil?: string;
+        description?: string;
+        descriptionCard?: string; // ← rendu optionnel
+        type?: string;
+        x?: number;
+        y?: number;
+        targets?: HeroTarget[];
+      };
+
 function Dictionnaire() {
     const [search, setSearch] = useState("");
-    const [heroes, setHeroes] = useState([]);
+    const [heroes, setHeroes] = useState<Hero[]>([]);
 
     useEffect(() => {
         async function getHeroes() {
@@ -20,21 +41,22 @@ function Dictionnaire() {
     const filteredHeroes = heroes.filter(
         (hero) =>
             hero.name.toLowerCase().includes(search.toLowerCase()) &&
-            !["union", "EnTrop"].includes(hero.type)
+        !["union", "EnTrop"].includes(hero.type ?? "")
+
     );
 
     // Trier par ordre alphabétique
     const sortedHeroes = filteredHeroes.sort((a, b) => a.name.localeCompare(b.name));
 
     // Grouper par première lettre
-    const groupedHeroes = sortedHeroes.reduce((acc, hero) => {
+    const groupedHeroes = sortedHeroes.reduce<Record<string, Hero[]>>((acc, hero) => {
         const firstLetter = hero.name[0].toUpperCase();
         if (!acc[firstLetter]) {
-            acc[firstLetter] = [];
+          acc[firstLetter] = [];
         }
         acc[firstLetter].push(hero);
         return acc;
-    }, {});
+      }, {});
 
     return (
         <main className="mainDico">
@@ -50,7 +72,7 @@ function Dictionnaire() {
                     <section key={letter} className="lettreSection">
                         <h2 className="lettreTitre">{letter}</h2>
                         <div className="tabHeroes">
-                            {groupedHeroes[letter].map((hero) => (
+                            {groupedHeroes[letter].map((hero: Hero) => (
                                 <Link className="lienHeroCard" key={hero.id} to={`/profilHero/${hero.id}`}>
                                     <HeroCard hero={hero} />
                                 </Link>

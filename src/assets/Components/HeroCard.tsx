@@ -1,13 +1,13 @@
 import "./HeroCard.css"
 
-interface HeroCardProps {
+type HeroCardProps = {
     hero: {
-        id: string;
-        name: string;
-        image: string;
-        description: string;
-    }
-}
+      id: string;
+      name: string;
+      image: string;
+      description?: string; // ✅ ← rendre cette propriété optionnelle
+    };
+  };
 
 function HeroCard({ hero }: HeroCardProps) {
     return (

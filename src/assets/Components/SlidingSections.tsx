@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SplitText } from "gsap/SplitText";
@@ -36,15 +36,16 @@ const contents = [
     },
 ];
 
+
 const SlidingSections = () => {
-    const sectionsRef = useRef([]);
-    const headingsRef = useRef([]);
-    const paragraphsRef = useRef([]);
+    const sectionsRef = useRef<(HTMLElement | null)[]>([]);
+    const headingsRef = useRef<(HTMLElement | null)[]>([]);
+    const paragraphsRef = useRef<(HTMLElement | null)[]>([]);
 
     useEffect(() => {
         gsap.set(sectionsRef.current, { opacity: 0, yPercent: 20 });
 
-        sectionsRef.current.forEach((section, index) => {
+        (sectionsRef.current as HTMLElement[]).forEach((section, index) => {
             const heading = headingsRef.current[index];
             const paragraph = paragraphsRef.current[index];
 
@@ -101,13 +102,13 @@ const SlidingSections = () => {
             {contents.map((content, i) => (
                 <section
                     key={i}
-                    ref={(el) => (sectionsRef.current[i] = el)}
+                    ref={(el) => {if(el && sectionsRef.current){ sectionsRef.current[i] = el}}}
                     className="section"
                     style={{ backgroundImage: `url(${content.image})` }}
                 >
                     <div className="section-content">
-                        <h2 ref={(el) => (headingsRef.current[i] = el)}>{content.title}</h2>
-                        <p ref={(el) => (paragraphsRef.current[i] = el)}>{content.text}</p>
+                        <h2 ref={(el) => { if (el) {headingsRef.current[i] = el}}}>{content.title}</h2>
+                        <p ref={(el) => { if (el) {paragraphsRef.current[i] = el}}}>{content.text}</p>
                         {content.path && (
                             <Link to={content.path} className="section-button">
                                 Explorer

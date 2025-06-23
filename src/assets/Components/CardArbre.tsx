@@ -1,7 +1,29 @@
 import "./CardArbre.css"
 import { Handle, Position } from 'reactflow';
 
-const CustomNode = ({ data }) => {
+export interface heroCard {
+    id: string,
+    name: string,
+    x: number,
+    y: number,
+    targets: [
+        {
+            target: string,
+            sourceHandle: string,
+            targetHandle: string
+        }
+    ],
+    image: string,
+    imageProfil: string,
+    description: string,
+    descriptionCard: string
+}
+
+interface custumNodeProps {
+    data: heroCard
+}
+
+const CustomNode = ({ data }: custumNodeProps) => {
     return (
         <div className="DivCardArbre">
             <img src={data.image} alt={data.name} className="ImgCardArbre" />

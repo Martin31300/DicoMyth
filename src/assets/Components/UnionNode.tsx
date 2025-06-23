@@ -1,6 +1,6 @@
 import { Handle, Position } from 'reactflow';
 
-const UnionNode = ({ data }) => (
+const UnionNode = () => (
     <div style={{
         width: 20,
         height: 20,

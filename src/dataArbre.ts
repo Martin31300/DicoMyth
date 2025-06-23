@@ -12,14 +12,16 @@ export const arbreNodes = heroes.map(h => ({
 
 export const arbreEdges = heroes.flatMap(h =>
     (h.targets || []).map(t => {
-        const targetObj = typeof t === 'string' ? { target: t } : t;
-        return {
-            id: `e${h.name}-${targetObj.target}`,
-            source: h.name,
-            target: targetObj.target,
-            type: 'smoothstep',
-            sourceHandle: targetObj.sourceHandle || 'bottom',
-            targetHandle: targetObj.targetHandle || 'top'
-        };
+      const targetObj = typeof t === 'string' ? { target: t } : t;
+  
+      return {
+        id: `e${h.name}-${targetObj.target}`,
+        source: h.name,
+        target: targetObj.target,
+        type: 'smoothstep',
+        sourceHandle: 'sourceHandle' in targetObj ? targetObj.sourceHandle : 'bottom',
+        targetHandle: 'targetHandle' in targetObj ? targetObj.targetHandle : 'top',
+      };
     })
-);
+  );
+  
