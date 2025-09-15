@@ -94,3 +94,10 @@
     object-fit: cover;
     display: block;
 }
+
+@media screen and (max-width: 480px) {
+    .contenuProfil {
+        margin-left: 16px;
+        margin-right: 16px;
+    }
+}
