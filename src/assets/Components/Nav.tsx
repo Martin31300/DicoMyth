@@ -4,7 +4,7 @@ import Logo from "../../Image-site-mythologie/logo.jpg"
 
 function Nav() {
     return (
-        <nav>
+        <nav className="Nav">
             <Link to="/"><img className="logo" src={Logo} alt="logo" /></Link>
 
             <div className="divNav">

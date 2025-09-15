@@ -1,4 +1,4 @@
-nav {
+.Nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -61,4 +61,14 @@ nav {
 
 .linkNav:hover {
     transform: translateY(-2px);
+}
+
+@media screen and (max-width: 1100px) {
+
+    .Nav {
+        padding: 20px 20px 20px 20px;
+    }
+	.divNav {
+		gap: 12px;
+	}
 }
