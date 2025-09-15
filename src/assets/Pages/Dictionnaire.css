@@ -53,8 +53,8 @@
 @media screen and (max-width: 900px) {
 
   .mainDico {
-    margin-left: 16px;
-    margin-right: 16px;
+    margin-left: 8%;
+    margin-right: 8%;
     margin-top: 40px;	
     }
 
@@ -79,4 +79,10 @@ width: 70%;
     .tabHeroes {
         grid-template-columns: 1fr;
     }
+
+    .mainDico {
+        margin-left: 16px;
+        margin-right: 16px;
+        margin-top: 40px;	
+        }
 }
