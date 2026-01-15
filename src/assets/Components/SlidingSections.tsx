@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 const contents = [
     {
         title: "Bienvenue",
-        text: "Dans l'univers de la mythologie grecque",
+        text: "Dans l'univers de la mythologie greco-romaine",
         image: "https://mythologica.fr/grec/pic/bertin_phaeton.jpg",
     },
     {
