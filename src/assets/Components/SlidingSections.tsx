@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 const contents = [
     {
         title: "Bienvenue",
-        text: "Ceci est la première section.",
+        text: "Dans l'univers de la mythologie grecque",
         image: "https://mythologica.fr/grec/pic/bertin_phaeton.jpg",
     },
     {
@@ -102,13 +102,13 @@ const SlidingSections = () => {
             {contents.map((content, i) => (
                 <section
                     key={i}
-                    ref={(el) => {if(el && sectionsRef.current){ sectionsRef.current[i] = el}}}
+                    ref={(el) => { if (el && sectionsRef.current) { sectionsRef.current[i] = el } }}
                     className="section"
                     style={{ backgroundImage: `url(${content.image})` }}
                 >
                     <div className="section-content">
-                        <h2 ref={(el) => { if (el) {headingsRef.current[i] = el}}}>{content.title}</h2>
-                        <p ref={(el) => { if (el) {paragraphsRef.current[i] = el}}}>{content.text}</p>
+                        <h2 ref={(el) => { if (el) { headingsRef.current[i] = el } }}>{content.title}</h2>
+                        <p ref={(el) => { if (el) { paragraphsRef.current[i] = el } }}>{content.text}</p>
                         {content.path && (
                             <Link to={content.path} className="section-button">
                                 Explorer
